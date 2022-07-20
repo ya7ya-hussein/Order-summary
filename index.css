@@ -1,0 +1,150 @@
+/* - Mobile: 375px
+- Desktop: 1440px */
+
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+:root {
+  --paleBlue: hsl(225, 100%, 94%);
+  --brightBlue: hsl(245, 75%, 52%);
+  --VeryPaleBlue: hsl(225, 100%, 98%);
+  --DesaturateBlue: hsl(224, 23%, 55%);
+  --DarkBlue: hsl(223, 47%, 23%);
+  --activeBlue: hsl(245, 83%, 68%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--paleBlue);
+  background-image: url("images/pattern-background-desktop.svg");
+  font-family: "Red Hat Display", sans-serif;
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 500;
+  color: var(--DesaturateBlue);
+}
+
+@media (max-width: 375px) {
+  body {
+    background-image: url("images/pattern-background-mobile.svg");
+  }
+}
+
+main {
+  position: relative;
+  height: 97vh;
+  width: 100%;
+}
+
+.order {
+  background-color: #ffffff;
+  position: absolute;
+  width: 400px;
+  height: 600px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+@media (max-width: 375px) {
+  .order {
+    width: 315px;
+  }
+}
+.order > img:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%;
+  height: 30%;
+}
+
+.content {
+  padding: 20px;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.content h1 {
+  font-size: 1.7em;
+  font-weight: 900;
+}
+
+.content h1,
+.planPrice p:first-child,
+.content .cancel:hover {
+  color: var(--DarkBlue);
+}
+.plans,
+.plan {
+  display: flex;
+  justify-content: space-between;
+}
+.plans {
+  width: 90%;
+  padding: 20px;
+  align-items: center;
+}
+@media (max-width: 375px) {
+  .plans {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.plan img {
+  width: 40px;
+  height: 40px;
+  margin: 0 13px;
+}
+.planPrice p:first-child {
+  font-weight: 900;
+}
+.plans a {
+  color: var(--brightBlue);
+}
+.plans a,
+.content button,
+.content .cancel {
+  font-weight: 700;
+}
+
+.plans a:hover {
+  text-decoration: none;
+  color: var(--activeBlue);
+}
+
+.content button {
+  width: 90%;
+  height: 40px;
+  margin-left: 30px;
+  margin-right: 30px;
+  background-color: var(--brightBlue);
+  color: var(--VeryPaleBlue);
+  border-radius: 10px;
+  box-shadow: 0px 15px 5px -5px var(--paleBlue); /* box-shadow: 0 10px var(--paleBlue); */
+  border: none;
+}
+@media (max-width: 375px) {
+  .content button {
+    width: 100%;
+  }
+}
+
+.content button:hover {
+  background-color: var(--activeBlue);
+}
+
+.content .cancel {
+  color: var(--DesaturateBlue);
+  text-decoration: none;
+}
